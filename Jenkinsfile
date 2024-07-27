@@ -5,15 +5,15 @@ pipeline{
             steps {
                 script {
  
-                    git branch: 'master', url: 'https://github.com/clement2019/Flask.git' 
+                    git branch: 'main', url: 'https://github.com/david19121/Flask.git' 
                 }
             }
         }
-        stage("Build docker connecting....."){
+        stage("Build docker connect....."){
             steps{
                 sh 'printenv'
                 sh 'git version'
-                sh 'docker build . -t good777lord/f-app1.0'
+                sh 'docker build . -t david745/f-app1.0'
             }
         }
          stage("push image to DockerHub"){
@@ -22,9 +22,9 @@ pipeline{
                script {
                   
                  withCredentials([string(credentialsId: 'DockerID', variable: 'DockerID')]) {
-                    sh 'docker login -u good777lord -p ${DockerID}'
+                    sh 'docker login -u david745 -p ${DockerID}'
             }
-              sh 'docker push good777lord/f-app1.0:latest'
+              sh 'docker push david745/f-app1.0:latest'
             }
         }
     }

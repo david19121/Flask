@@ -5,7 +5,7 @@ pipeline{
             steps {
                 script {
  
-                    git branch: 'main', url: 'https://github.com/david19121/Flask.git' 
+                    git branch: 'master', url: 'https://github.com/david19121/Flask.git' 
                 }
             }
         }

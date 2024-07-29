@@ -21,8 +21,8 @@ pipeline{
 
                script {
                   
-                 withCredentials([string(credentialsId: 'david', variable: 'david')]) {
-                    sh 'docker login -u david745 -p ${david}'
+                 withCredentials([string(credentialsId: 'dave', variable: 'dave')]) {
+                    sh 'docker login -u david745 -p ${dave}'
             }
               sh 'docker push david745/f-app1.0:latest'
             }
